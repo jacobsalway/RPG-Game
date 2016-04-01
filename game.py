@@ -1,10 +1,13 @@
 from gamelib import base
+from gamelib import states
+from gamelib import modules
 
 
 def main():
-    state_1 = base.State('State 1')
-    state_2 = base.State('State 2')
-    director = base.Director([state_1, state_2])
+    state_1 = states.MovementState('State 2')
+    pos_module = modules.pos()
+    map_module = modules.map()
+    director = base.Director([state_1], [pos_module, map_module])
 
     quit_flag = False
 
